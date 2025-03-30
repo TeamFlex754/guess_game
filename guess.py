@@ -1,8 +1,8 @@
 from random import randint
 
-game = True
+
 solution = randint(1,10)
-while game:
+while True:
     guess = int(input("Guess a number between 1 and 10: "))
     if guess > solution:
         print("Too high, try again!")
@@ -10,9 +10,9 @@ while game:
         print("Too low, try again!")
     elif guess == solution:
         print("You guessed it! You won!")
-        break
-    play_again = input("Do you want to keep playing? (y/n): ")
-    if play_again == 'y':
-        game = True
-    else:
-        game = False
+        play_again = input("Do you want to keep playing? (y/n): ")
+        if play_again == 'y':
+            solution = randint(1, 10)
+        else:
+            print("Thanks for playing!")
+            break
